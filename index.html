@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Agrinho 2026</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js (gráfico profissional) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -12,71 +16,96 @@
   <h1>Agrinho 2026</h1>
 </header>
 
-<!-- BOTÕES DE NAVEGAÇÃO -->
 <nav>
-  <button onclick="irPara('economia')">Economia no Brasil</button>
-  <button onclick="irPara('grafico')">Gráfico</button>
-  <button onclick="irPara('agronomia')">Agronomia</button>
-  <button onclick="irPara('meioambiente')">Meio Ambiente</button>
+  <button onclick="ir('inicio')">Início</button>
+  <button onclick="ir('economia')">Economia</button>
+  <button onclick="ir('grafico')">Gráfico</button>
+  <button onclick="ir('agronomia')">Agronomia</button>
+  <button onclick="ir('meio')">Sustentabilidade</button>
 </nav>
 
-<!-- FUNDO E CONTEÚDO -->
 <div class="fundo">
 
-  <section id="inicio" class="secao">
-    <h2>Agro Frote: em busca de um futuro sustentável</h2>
-    <p>Um site sobre o impacto do agro no Brasil.</p>
-  </section>
+<!-- HERO -->
+<section id="inicio" class="secao hero">
+  <h2>Agro Frote: em busca de um futuro sustentável</h2>
+  <p>O agro como força econômica e ambiental do Brasil.</p>
+</section>
 
-  <!-- ECONOMIA -->
-  <section id="economia" class="secao">
-    <h2>Como a agricultura influencia a economia no Brasil</h2>
-    <p>A agricultura gera empregos, exportações e sustenta grande parte do PIB brasileiro.</p>
+<!-- ECONOMIA -->
+<section id="economia" class="secao">
+  <h2>🌾 Impacto da agricultura na economia</h2>
 
-    <div class="faq">
+  <div class="cards-info">
+    <div class="info">💰 25% do PIB brasileiro vem do agro</div>
+    <div class="info">🚜 Milhões de empregos gerados</div>
+    <div class="info">🌍 Forte exportação mundial</div>
+  </div>
+
+  <div class="faq">
+    <div class="item">
       <button onclick="toggle(this)">Quanto custa produzir soja?</button>
-      <div class="resposta">Em média entre R$ 5.000 a R$ 8.000 por hectare.</div>
-
-      <button onclick="toggle(this)">A agricultura gera empregos?</button>
-      <div class="resposta">Sim, milhões de empregos diretos e indiretos no Brasil.</div>
+      <div class="resposta">Entre R$ 5.000 e R$ 9.000 por hectare dependendo da tecnologia.</div>
     </div>
-  </section>
 
-  <!-- GRÁFICO -->
-  <section id="grafico" class="secao">
-    <h2>Comparação da agricultura com outros setores</h2>
-    <canvas id="chart"></canvas>
-  </section>
-
-  <!-- AGRONOMIA -->
-  <section id="agronomia" class="secao">
-    <h2>Como a agronomia influencia o país</h2>
-
-    <div class="cards">
-      <div class="card" onclick="girar(this)">
-        <div class="frente">Agronomia</div>
-        <div class="tras">Melhora produtividade e reduz custos no campo.</div>
-      </div>
-
-      <div class="card" onclick="girar(this)">
-        <div class="frente">Tecnologia</div>
-        <div class="tras">Uso de drones e sensores no cultivo.</div>
-      </div>
+    <div class="item">
+      <button onclick="toggle(this)">O agro cresce no Brasil?</button>
+      <div class="resposta">Sim, é um dos setores que mais cresce no país.</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MEIO AMBIENTE -->
-  <section id="meioambiente" class="secao">
-    <h2>Equilíbrio entre campo e meio ambiente</h2>
+<!-- GRÁFICO -->
+<section id="grafico" class="secao">
+  <h2>📊 Comparação econômica</h2>
+  <canvas id="chart"></canvas>
+</section>
 
-    <div class="faq">
-      <button onclick="toggle(this)">Como reduzir impactos ambientais?</button>
-      <div class="resposta">Usando agricultura sustentável e rotação de culturas.</div>
+<!-- AGRONOMIA -->
+<section id="agronomia" class="secao">
+  <h2>🌱 Influência da agronomia no país</h2>
 
-      <button onclick="toggle(this)">O agro pode ser sustentável?</button>
-      <div class="resposta">Sim, com tecnologia e preservação ambiental.</div>
+  <div class="flip-container">
+
+    <div class="flip" onclick="flip(this)">
+      <div class="front">Tecnologia</div>
+      <div class="back">Drones e sensores aumentam produtividade.</div>
     </div>
-  </section>
+
+    <div class="flip" onclick="flip(this)">
+      <div class="front">Solo</div>
+      <div class="back">Melhor análise do solo melhora colheita.</div>
+    </div>
+
+    <div class="flip" onclick="flip(this)">
+      <div class="front">Sementes</div>
+      <div class="back">Genética aumenta resistência e produção.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MEIO AMBIENTE -->
+<section id="meio" class="secao">
+  <h2>🌎 Sustentabilidade no campo</h2>
+
+  <div class="faq">
+    <div class="item">
+      <button onclick="toggle(this)">Como reduzir impacto ambiental?</button>
+      <div class="resposta">Usando agricultura de precisão e rotação de culturas.</div>
+    </div>
+
+    <div class="item">
+      <button onclick="toggle(this)">É possível produzir e preservar?</button>
+      <div class="resposta">Sim, com tecnologia e boas práticas agrícolas.</div>
+    </div>
+
+    <div class="item">
+      <button onclick="toggle(this)">O que é agricultura sustentável?</button>
+      <div class="resposta">Produção que respeita o meio ambiente e recursos naturais.</div>
+    </div>
+  </div>
+</section>
 
 </div>
 
