@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* FUNDO (imagem da colheitadeira) */
+.fundo {
+  background: url('https://images.unsplash.com/photo-1602526210961-3f0b0f2d5c2a?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+}
+
+/* CABEÇALHO */
+header {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
+}
+
+/* MENU */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #2e7d32;
+  padding: 10px;
+}
+
+nav button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: #66bb6a;
+  color: white;
+}
+
+/* SEÇÕES */
+.secao {
+  background: rgba(0,0,0,0.7);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* FAQ */
+.faq button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #388e3c;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.resposta {
+  display: none;
+  padding: 10px;
+  background: #1b5e20;
+}
+
+/* CARDS FLIP */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.frente {
+  background: #43a047;
+}
+
+.tras {
+  background: #1b5e20;
+  transform: rotateY(180deg);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #1b5e20;
+}
