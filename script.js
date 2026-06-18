@@ -1,7 +1,11 @@
-// scroll suave
-function ir(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-}
+// scroll automático via menu
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
 
 // FAQ
 function toggle(btn) {
@@ -10,33 +14,27 @@ function toggle(btn) {
 }
 
 // flip cards
-function flip(el) {
-  el.classList.toggle("ativo");
+function flip(card) {
+  card.classList.toggle("ativo");
 }
 
-// GRÁFICO PROFISSIONAL
+// gráfico profissional
 const ctx = document.getElementById("chart");
 
 new Chart(ctx, {
-  type: "bar",
+  type: "doughnut",
   data: {
-    labels: ["Agricultura", "Indústria", "Serviços"],
+    labels: ["Agronegócio", "Indústria", "Serviços"],
     datasets: [{
-      label: "% no PIB do Brasil",
-      data: [26, 22, 52],
-      backgroundColor: ["green", "blue", "orange"]
+      data: [27, 22, 51],
+      backgroundColor: ["#22c55e", "#3b82f6", "#f59e0b"]
     }]
   },
   options: {
-    responsive: true,
     plugins: {
       legend: {
-        labels: { color: "white" }
+        labels: { color: "#fff" }
       }
-    },
-    scales: {
-      x: { ticks: { color: "white" } },
-      y: { ticks: { color: "white" } }
     }
   }
 });
