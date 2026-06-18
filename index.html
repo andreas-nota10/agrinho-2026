@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agrinho 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Agrinho 2026</h1>
+</header>
+
+<!-- BOTÕES DE NAVEGAÇÃO -->
+<nav>
+  <button onclick="irPara('economia')">Economia no Brasil</button>
+  <button onclick="irPara('grafico')">Gráfico</button>
+  <button onclick="irPara('agronomia')">Agronomia</button>
+  <button onclick="irPara('meioambiente')">Meio Ambiente</button>
+</nav>
+
+<!-- FUNDO E CONTEÚDO -->
+<div class="fundo">
+
+  <section id="inicio" class="secao">
+    <h2>Agro Frote: em busca de um futuro sustentável</h2>
+    <p>Um site sobre o impacto do agro no Brasil.</p>
+  </section>
+
+  <!-- ECONOMIA -->
+  <section id="economia" class="secao">
+    <h2>Como a agricultura influencia a economia no Brasil</h2>
+    <p>A agricultura gera empregos, exportações e sustenta grande parte do PIB brasileiro.</p>
+
+    <div class="faq">
+      <button onclick="toggle(this)">Quanto custa produzir soja?</button>
+      <div class="resposta">Em média entre R$ 5.000 a R$ 8.000 por hectare.</div>
+
+      <button onclick="toggle(this)">A agricultura gera empregos?</button>
+      <div class="resposta">Sim, milhões de empregos diretos e indiretos no Brasil.</div>
+    </div>
+  </section>
+
+  <!-- GRÁFICO -->
+  <section id="grafico" class="secao">
+    <h2>Comparação da agricultura com outros setores</h2>
+    <canvas id="chart"></canvas>
+  </section>
+
+  <!-- AGRONOMIA -->
+  <section id="agronomia" class="secao">
+    <h2>Como a agronomia influencia o país</h2>
+
+    <div class="cards">
+      <div class="card" onclick="girar(this)">
+        <div class="frente">Agronomia</div>
+        <div class="tras">Melhora produtividade e reduz custos no campo.</div>
+      </div>
+
+      <div class="card" onclick="girar(this)">
+        <div class="frente">Tecnologia</div>
+        <div class="tras">Uso de drones e sensores no cultivo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEIO AMBIENTE -->
+  <section id="meioambiente" class="secao">
+    <h2>Equilíbrio entre campo e meio ambiente</h2>
+
+    <div class="faq">
+      <button onclick="toggle(this)">Como reduzir impactos ambientais?</button>
+      <div class="resposta">Usando agricultura sustentável e rotação de culturas.</div>
+
+      <button onclick="toggle(this)">O agro pode ser sustentável?</button>
+      <div class="resposta">Sim, com tecnologia e preservação ambiental.</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Todos direitos reservados para @agrinho 2026
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
