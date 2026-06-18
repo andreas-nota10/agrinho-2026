@@ -1,39 +1,42 @@
-// rolagem suave para seção
-function irPara(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+// scroll suave
+function ir(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
-// mostrar/ocultar respostas
+// FAQ
 function toggle(btn) {
-  const resposta = btn.nextElementSibling;
-  resposta.style.display = resposta.style.display === "block" ? "none" : "block";
+  const resp = btn.nextElementSibling;
+  resp.style.display = resp.style.display === "block" ? "none" : "block";
 }
 
-// flip card
-function girar(card) {
-  card.classList.toggle("virado");
+// flip cards
+function flip(el) {
+  el.classList.toggle("ativo");
 }
 
-// GRÁFICO SIMPLES
-const ctx = document.getElementById("chart").getContext("2d");
+// GRÁFICO PROFISSIONAL
+const ctx = document.getElementById("chart");
 
-const dados = {
-  labels: ["Agricultura", "Indústria", "Serviços"],
-  valores: [40, 25, 35]
-};
-
-function desenharGrafico() {
-  ctx.fillStyle = "white";
-  ctx.font = "16px Arial";
-  ctx.fillText("Impacto na economia (%)", 10, 20);
-
-  let x = 50;
-  dados.valores.forEach((v, i) => {
-    ctx.fillStyle = ["green", "blue", "orange"][i];
-    ctx.fillRect(x, 50, 50, v * 2);
-    ctx.fillText(dados.labels[i], x, 170);
-    x += 100;
-  });
-}
-
-desenharGrafico();
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: ["Agricultura", "Indústria", "Serviços"],
+    datasets: [{
+      label: "% no PIB do Brasil",
+      data: [26, 22, 52],
+      backgroundColor: ["green", "blue", "orange"]
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: "white" }
+      }
+    },
+    scales: {
+      x: { ticks: { color: "white" } },
+      y: { ticks: { color: "white" } }
+    }
+  }
+});
